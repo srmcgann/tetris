@@ -14,7 +14,7 @@ function initVars(){
 	lastDrop=0;
 	dropInterval=.2;
 	keyTimer=0;
-	keyInterval=.04;
+	keyInterval=.08;
 	rotateTimer=0;
 	dropKeyTimer=0;
 	stat=document.getElementById("status");
@@ -340,10 +340,10 @@ function doLogic(){
 
 function frame(){
 	
-	setTimeout(frame,33); //roughly 30 FPS
+	requestAnimationFrame(frame);
 	time+=.01;
 	doLogic();
-	requestAnimationFrame(render);
+	render();
 }
 
 initVars();
